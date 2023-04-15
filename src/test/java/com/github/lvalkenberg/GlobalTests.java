@@ -1,3 +1,5 @@
+package com.github.lvalkenberg;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 import com.github.lvalkenberg.solver.TSP;
