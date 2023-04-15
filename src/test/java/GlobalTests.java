@@ -1,8 +1,8 @@
 import static org.junit.jupiter.api.Assertions.*;
 
-import solver.TSP;
+import com.github.lvalkenberg.solver.TSP;
 import org.junit.jupiter.api.Test;
-import other.soTSP;
+import com.github.lvalkenberg.other.soTSP;
 
 public class GlobalTests {
 

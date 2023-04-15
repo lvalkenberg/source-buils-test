@@ -1,7 +1,7 @@
-package executable;
+package com.github.lvalkenberg.executable;
 
-import other.soTSP;
-import solver.TSP;
+import com.github.lvalkenberg.other.soTSP;
+import com.github.lvalkenberg.solver.TSP;
 
 public class Solver {
 

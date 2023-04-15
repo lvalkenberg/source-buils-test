@@ -1,7 +1,7 @@
-package solver;
+package com.github.lvalkenberg.solver;
 
-import util.UF;
-import util.UFTree;
+import com.github.lvalkenberg.util.UF;
+import com.github.lvalkenberg.util.UFTree;
 
 import java.util.ArrayList;
 import java.util.Collections;

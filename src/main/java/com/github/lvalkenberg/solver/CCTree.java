@@ -1,4 +1,4 @@
-package solver;
+package com.github.lvalkenberg.solver;
 
 /**
  * Connected componnent tree

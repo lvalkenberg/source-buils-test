@@ -1,4 +1,4 @@
-package solver;// simple exact Solver.TSP solver based on branch-and-bound/Held--Karp
+package com.github.lvalkenberg.solver;// simple exact Solver.TSP com.github.lvalkenberg.solver based on branch-and-bound/Held--Karp
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -39,7 +39,7 @@ public class TSP {
     // True if the currentNode is a direct children of the last one
     private boolean directChildren = false;
 
-    // default solver parameters
+    // default com.github.lvalkenberg.solver parameters
     public boolean margCost = true;
     public boolean repCost = true;
     public String branching = "force";
@@ -52,7 +52,7 @@ public class TSP {
         System.err.printf("%n");
         TSP tsp = new TSP();
         //tsp.readInput(new InputStreamReader(System.in));
-        tsp.xmlReader("../TSPlib/xml files/gr120.xml");
+        tsp.xmlReader("../TSPlib/xml files/gr48.xml");
 
         long start = System.nanoTime();
         tsp.solve();

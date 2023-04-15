@@ -1,17 +1,11 @@
-package util;
+package com.github.lvalkenberg.util;
 
 // https://algs4.cs.princeton.edu/15uf/UF.java.html
-
-/**
- * Adaptation of the classical UF such that the canonical element
- * is always the closest one to the root (with the smallest depth).
- */
-public class UFTree {
+public class UF {
 
     private int[] parent;  // parent[i] = parent of i
     private byte[] rank;   // rank[i] = rank of subtree rooted at i (never more than 31)
     private int count;     // number of components
-    private int[] depth;   // depth of the element
 
     /**
      * Initializes an empty union-find data structure with
@@ -21,7 +15,7 @@ public class UFTree {
      * @param  n the number of elements
      * @throws IllegalArgumentException if {@code n < 0}
      */
-    public UFTree(int n, int[] depth) {
+    public UF(int n) {
         if (n < 0) throw new IllegalArgumentException();
         count = n;
         parent = new int[n];
@@ -30,7 +24,6 @@ public class UFTree {
             parent[i] = i;
             rank[i] = 0;
         }
-        this.depth = depth;
     }
 
     /**
@@ -62,7 +55,7 @@ public class UFTree {
      * Returns true if the two elements are in the same set.
      *
      * @param  p one element
-     * @param  q the other element
+     * @param  q the com.github.lvalkenberg.other element
      * @return {@code true} if {@code p} and {@code q} are in the same set;
      *         {@code false} otherwise
      * @throws IllegalArgumentException unless
@@ -79,7 +72,7 @@ public class UFTree {
      * the set containing element {@code q}.
      *
      * @param  p one element
-     * @param  q the other element
+     * @param  q the com.github.lvalkenberg.other element
      * @throws IllegalArgumentException unless
      *         both {@code 0 <= p < n} and {@code 0 <= q < n}
      */
@@ -89,15 +82,11 @@ public class UFTree {
         if (rootP == rootQ) return;
 
         // make root of smaller rank point to root of larger rank
-        if      (depth[rootP] > depth[rootQ]) parent[rootP] = rootQ;
-        else if (depth[rootP] < depth[rootQ]) parent[rootQ] = rootP;
+        if      (rank[rootP] < rank[rootQ]) parent[rootP] = rootQ;
+        else if (rank[rootP] > rank[rootQ]) parent[rootQ] = rootP;
         else {
-            if      (rank[rootP] < rank[rootQ]) parent[rootP] = rootQ;
-            else if (rank[rootP] > rank[rootQ]) parent[rootQ] = rootP;
-            else {
-                parent[rootQ] = rootP;
-                rank[rootP]++;
-            }
+            parent[rootQ] = rootP;
+            rank[rootP]++;
         }
         count--;
     }
@@ -124,8 +113,8 @@ public class UFTree {
     }
 
     //clone
-    public UFTree clone(){
-        UFTree clone = new UFTree(this.count, this.depth);
+    public UF clone(){
+        UF clone = new UF(this.count);
         clone.parent = this.parent.clone();
         clone.rank = this.rank.clone();
         return clone;

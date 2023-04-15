@@ -1,6 +1,6 @@
-package solver;
+package com.github.lvalkenberg.solver;
 
-import util.UF;
+import com.github.lvalkenberg.util.UF;
 
 import java.util.ArrayList;
 import java.util.HashMap;

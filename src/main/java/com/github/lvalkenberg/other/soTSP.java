@@ -1,4 +1,4 @@
-package other;// simple exact Solver.TSP solver based on branch-and-bound/Held--Karp
+package com.github.lvalkenberg.other;// simple exact Solver.TSP com.github.lvalkenberg.solver based on branch-and-bound/Held--Karp
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
