@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="GlobalTests" tests="4" skipped="0" failures="0" errors="0" timestamp="2023-04-05T07:39:10" hostname="DESKTOP-H8TDG7S" time="55.061">
+  <properties/>
+  <testcase name="outputBig()" classname="GlobalTests" time="51.531"/>
+  <testcase name="outputSmall()" classname="GlobalTests" time="1.111"/>
+  <testcase name="outputMedium()" classname="GlobalTests" time="2.235"/>
+  <testcase name="outputSmallRandom()" classname="GlobalTests" time="0.183"/>
+  <system-out><![CDATA[Compare on instance : dantzig42
+Compare on instance : att48
+Compare on instance : gr48
+Compare on instance : rat99
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
